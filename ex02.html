@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>예시02: Where to insert script</title>
+
+    <script>
+      // function script in Header
+      function putNow(s) {
+          var remark = " put by function defined in Head";
+          x.innerHTML += "<BR>" + s + " " + remark;
+      }
+    </script>
+
+    <script src="ex02.js" charset="utf-8"></script>
+  </head>
+
+  <body>
+    <h4>JavaScript in Body</h4>
+    <p id="dtx">Now is ...</p>
+
+    <!-- <script type="text/javascript"> is old style -->
+    <script>
+      // script in Body
+      var x = document.getElementById('dtx')
+      var remark = "put by script in Body";
+      x.innerHTML += "<BR>" + Date() + " " + remark;
+    </script>
+
+    <button type="button" onclick="putNow(Date.now())">Click Me</button>
+    <button type="button" onclick="PutTime()">Try Me</button>
+    <button type="button" onclick="PutDate()">Click Me Too</button>
+    <button type="button" onclick="PutISO()">Try Me Too</button>
+
+    <script>
+      // function script in Body
+      function PutTime() {
+          var remark = "put by function defined at the bottom of Body";
+          x.innerHTML += "<BR>" + (new Date()).toLocaleTimeString() + " " + remark;
+      }
+    </script>
+
+    <script src="./js_sub/ex02_sub.js"></script>
+  </body>
+</html>
