@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>예시03: How to display data</title>
+  </head>
+
+  <body>
+      <!-- Using document.write() after an HTML document is loaded,
+           will delete all existing HTML: -->
+
+      <script type="text/javascript">
+          document.write(15 + 6);
+      </script>
+
+      <p id="demo">25 + 6</p>
+      <script>
+        var x = document.getElementById("demo");
+
+        x.innerHTML = (35 + 6) + "";
+        window.console.log(45 + 6);
+        window.console.assert((55 + 6)%2 == 1, "%d is not odd", (55 + 6));
+        window.console.assert((65 + 6)%2 == 0, "%d is not even", (65 + 6));
+        window.console.debug((77 + 6)%2 == 1);
+        window.console.debug((87 + 6)%2 == 0);
+        window.alert(95+6);
+      </script>
+  </body>
+</html>
