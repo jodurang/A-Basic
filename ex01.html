@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>예시01: What to do</title>
+  </head>
+  <body>
+    <h4>JavaScript can change HTML content.</h4>
+    <button type="button" name="button1"
+    onclick="document.getElementById('dtx').innerHTML = Date()">
+    Click me</button>
+
+    <h4>JavaScript can hide HTML element.</h4>
+    <button type="button" name="button2"
+    onclick="document.getElementById('dtx').style.display = 'none'">
+    Hide</button>
+
+    <button type="button" name="button3"
+    onclick="document.getElementById('dtx').style.display = 'block'">
+    Unhide</button>
+
+    <h4>JavaScript can change HTML Style.</h4>
+    <button type="button" name="button4" onclick="setFonxtSize('25px')">
+    35px</button>
+    <button type="button" name="button5" onclick="setFonxtSize('100%')">
+    100%</button>
+
+    <h4>JavaScript can change HTML Attribute Value.</h4>
+    <button type="button" name="button6" onclick="trunLight(true)">
+    Turn On</button>
+
+    <button type="button" name="button6" onclick="trunLight(false)">
+    Turn Off</button>
+
+    <p id="dtx">Now is ...</p>
+    <img src="https://www.w3schools.com/js/pic_bulboff.gif" alt="" id="imgx" width="50">
+    <script type="text/javascript">
+
+      function setFonxtSize(s) {
+          var x = document.getElementById('dtx')
+          x.style.fontSize = s
+      }
+
+      function trunLight(isOn) {
+          var src;
+          if(isOn) src = 'https://www.w3schools.com/js/pic_bulbon.gif';
+          else     src = 'https://www.w3schools.com/js/pic_bulboff.gif'
+
+          var x = document.getElementById('imgx')
+          x.src = src
+      }
+    </script>
+  </body>
+</html>
